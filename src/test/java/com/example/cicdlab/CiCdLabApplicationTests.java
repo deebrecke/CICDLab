@@ -30,4 +30,12 @@ class CiCdLabApplicationTests {
         String actualColor = redDie.getColor();
         assertEquals(expectedColor, actualColor);
     }
+
+    @Test
+    public void testAnotherColor(){
+        Dice greenDie = new Dice(6, "green");
+        String expectedColor = "green";
+        String actualColor = greenDie.getColor();
+        assertEquals(expectedColor, actualColor);
+    }
 }
