@@ -46,8 +46,13 @@ class CiCdLabApplicationTests {
 
     @Test
     public void testRollMany() {
-        int[] rollsHistory = redDie.rollMany(5);
-        assertEquals(5, rollsHistory.length);
+        int times = 5;
+        int[] rollsHistory = redDie.rollMany(times);
+        assertEquals(times, rollsHistory.length);
+
+        for (int i = 0; i < times; i++) {
+            assertTrue(rollsHistory[i] >= 0 && rollsHistory[i] <= 6);
+        }
     }
 
 
