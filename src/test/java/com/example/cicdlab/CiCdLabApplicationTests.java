@@ -5,7 +5,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.skyscreamer.jsonassert.JSONAssert.assertEquals;
 
 @SpringBootTest
 class CiCdLabApplicationTests {
@@ -44,6 +43,13 @@ class CiCdLabApplicationTests {
         int result = redDie.roll();
         assertTrue(result >= 1 && result <= 6);
     }
+
+    @Test
+    public void testRollMany() {
+        int[] rollsHistory = redDie.rollMany(5);
+        assertEquals(5, rollsHistory.length);
+    }
+
 
     @Test
     public void testToString() {
