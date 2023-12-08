@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.skyscreamer.jsonassert.JSONAssert.assertEquals;
 
 @SpringBootTest
@@ -38,12 +39,16 @@ class CiCdLabApplicationTests {
         String actualColor = greenDie.getColor();
         assertEquals(expectedColor, actualColor);
     }
+    @Test
+    public void testRoll() {
+        int result = redDie.roll();
+        assertTrue(result >= 1 && result <= 6);
+    }
 
-//    @Test
-//    public void intentionalFail(){
-//        Dice greenDie = new Dice(6, "green");
-//        String expectedColor = "red";
-//        String actualColor = greenDie.getColor();
-//        assertEquals(expectedColor, actualColor);
-//    }
+    @Test
+    public void testToString() {
+        String result = redDie.toString();
+        assertEquals("A " + 6 + " sided die", result);
+    }
 }
+
