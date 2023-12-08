@@ -26,7 +26,7 @@ class CiCdLabApplicationTests {
 
     @Test
     public void testColor(){
-        String expectedColor = "red";
+        String expectedColor = "green";
         String actualColor = redDie.getColor();
         assertEquals(expectedColor, actualColor);
     }
